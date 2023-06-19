@@ -1,20 +1,18 @@
 #!/bin/sh
-set -ea
+set -eu
+
+cd /srv/app
 
 if [ ! -f "package.json" ]; then
-    DOCKER=true strapi new . \
-        --no-run \
-        --dbclient=${DB_CLIENT:-mysql} \
-        --dbhost=$DB_HOST \
-        --dbport=$DB_PORT \
-        --dbname=$DB_NAME \
-        --dbusername=$DB_USER \
-        --dbpassword=$DB_PASSWORD \
-        $EXTRA_ARGS
+    yarn create strapi-app . --no-run --quickstart
 fi
 
 if [ ! -d "node_modules" ]; then
     yarn install --prod
 fi
 
-exec strapi start
+if [ ! -d "node_modules/mysql2" ]; then
+    yarn add mysql2
+fi
+
+exec yarn strapi start
