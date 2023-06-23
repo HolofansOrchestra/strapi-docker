@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  strapi:
+    environment:
+      NODE_ENV: develop
