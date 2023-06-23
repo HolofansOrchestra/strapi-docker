@@ -1,4 +1,4 @@
-FROM node:18-slim as node
+FROM node:16-slim as node
 
 RUN mkdir -p /srv/app && chown 1000:1000 -R /srv/app
 
