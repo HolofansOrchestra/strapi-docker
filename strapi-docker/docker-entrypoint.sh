@@ -15,8 +15,6 @@ if [ ! -d "node_modules/mysql2" ]; then
     yarn add mysql2
 fi
 
-exec yarn build
-
 if [ $NODE_ENV = "develop" ]; then
     exec yarn strapi develop
 else
