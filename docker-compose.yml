@@ -20,7 +20,8 @@ services:
     networks:
       - strapi
     volumes:
-      - ./app:/srv/app
+      - ./app/public:/srv/app/public
+      - ./app/src/extensions:/srv/app/src/extensions
     depends_on:
       - strapiDB
 
