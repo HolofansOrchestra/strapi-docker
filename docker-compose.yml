@@ -14,7 +14,7 @@ services:
       DATABASE_USERNAME: ${DB_USER}
       DATABASE_PASSWORD: ${DB_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
-      CUSTOM_COMMAND: yarn add @strapi/plugin-seo strapi-plugin-publisher strapi-plugin-sitemap strapi-plugin-cloudflare-pages && yarn build
+      CUSTOM_COMMAND: yarn add @strapi/plugin-seo strapi-plugin-publisher strapi-plugin-sitemap strapi-plugin-cloudflare-pages strapi-plugin-responsive-image && yarn build
       NODE_ENV: production
     ports:
       - 1337:1337
